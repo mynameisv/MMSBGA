@@ -1,0 +1,768 @@
+[
+	{
+		"name":"HARD-CODED-MIXEDGEIE",
+		"altname":{
+			"fr":"HARD-CODED-MIXEDGEIE"
+		},
+		"startwith":[
+			"Microsoft Browser",
+			"Affected Components"		# strange and may introduced problems... Frack you microsoft for naming "CVE-2016-7278" like that
+		]
+	},
+	{
+		"name":"HARD-CODED-IE",
+		"altname":{
+			"fr":"HARD-CODED-IE"
+		},
+		"startwith":[
+			"HARD-CODED-IE",
+			"DLL Loading"	# strange name !!?
+		]
+	},
+	{
+		"name":"HARD-CODED-EDGE",
+		"altname":{
+			"fr":"HARD-CODED-EDGE"
+		},
+		"startwith":[
+			"Microsoft Edge"
+		]
+	},
+	{
+		"name":"Hyper-V",
+		"altname":{
+			"fr":"Hyper-V"
+		},
+		"startwith":[
+			"Windows Hypervisor",
+			"Hypervisor",
+			"Hyper-V",
+			"Microsoft Hyper-V",
+			"Windows Hyper-V"
+		]
+	},
+	{
+		"name":"Windows SAM and LSAD",
+		"altname":{
+			"fr":"SAM et le protocole distant LSAD"
+		},
+		"startwith":[
+			"Windows SAM and LSAD"	#MS16-047 CVE-2016-0128
+		]
+	},
+	{
+		"name":"Secondary Logon",
+		"altname":{
+			"fr":"Service d'ouverture de session secondaire"
+		},
+		"startwith":[
+			"Secondary Logon"	# MS16-046 CVE-2016-0135
+		]
+	},
+	{
+		"name":"Office",
+		"altname":{
+			"fr":"Office"
+		},
+		"startwith":[
+			"Microsoft Office",
+			"Microsoft PowerPoint",
+			"PowerPoint ", # CVE-2017-8742
+			"Microsoft Outlook",
+			"Microsoft OneNote",
+			"Microsoft Lync",
+			"Microsoft Publisher",
+			"Microsoft APP-V", #MS16-107 MS16-077
+			"Office",
+			"Microsoft (MAU) Office"	#MS16-148 CVE-2016-7300
+			
+		]
+	},
+	{
+		"name":"Microsoft Win32K and/or Graphics Component",
+		"altname":{
+			"fr":"Noyau Win32k et/ou GDI32"
+		},
+		"startwith":[
+			"Win32k",
+			"Graphics Memory Corruption",
+			"Windows Transaction Manager",
+			"Windows Crypto Driver",
+			"Windows Installer",
+			"Microsoft Registry",
+			"Windows Registry",
+			"Windows Bowser.sys"	#MS16-135 CVE-2016-7218
+		]
+	},
+	{
+		"name":"MSXML",
+		"altname":{
+			"fr":"MSXML"
+		},
+		"startwith":[
+			"MSXML",
+			"Microsoft XML",
+			"Windows XML"
+		]
+	},
+	{
+		"name":".Net",
+		"altname":{
+			"fr":".Net"
+		},
+		"startwith":[
+			".NET Framework",
+			"TLS/SSL Spoofing",
+			".NET"
+		]
+	},
+	{
+		"name":"HTTP.sys",
+		"altname":{
+			"fr":"HTTP.sys"
+		},
+		"startwith":[
+			"HTTP.sys"
+		]
+	},
+	{
+		"name":"CSRSS",
+		"altname":{
+			"fr":"CSRSS"
+		},
+		"startwith":[
+			"Windows CSRSS"
+		]
+	},
+	{
+		"name":"Windows OLE",
+		"altname":{
+			"fr":"Windows OLE"
+		},
+		"startwith":[
+			"Windows OLE"
+		]
+	},
+	{
+		"name":"HARD-CODED-FLASH",
+		"altname":{
+			"fr":"HARD-CODED-FLASH"
+		},
+		"startwith":[
+			"January Flash",
+			"February Flash",
+			"March Flash",
+			"April Flash",
+			"May Flash",
+			"June Flash",
+			"July Flash",
+			"August Flash",
+			"September Flash",
+			"October Flash",
+			"November Flash",
+			"December Flash",
+			"Security Update for Adobe Flash Player",
+			"Adobe Flash OOB",
+			"August 2017 Flash Update" # ADV170010
+		]
+	},
+	{
+		"name":"Windows Kernel",
+		"altname":{
+			"fr":"le noyau"
+		},
+		"startwith":[
+			"Windows Kernel",
+			"Microsoft DirectX Graphics Kernel Subsystem",
+			"Windows File System Security",
+			"Windows Session Object"
+		]
+	},
+	{
+		"name":"Kernel-Mode Drivers",
+		"altname":{
+			"fr":"Noya"
+		},
+		"startwith":[
+			"Windows Virtual PCI"
+		]
+	},
+	{
+		"name":"Secure Boot",
+		"altname":{
+			"fr":"Secure Boot"
+		},
+		"startwith":[
+			"Secure Boot"
+		]
+	},
+	{
+		"name":"Windows",
+		"altname":{
+			"fr":"Windows"
+		},
+		"startwith":[
+			"Windows Remote Code",
+			"Windows Security Feature",
+			"Windows COM ",
+			"Windows Cursor",
+			"Windows Elevation",
+			"LNK",
+			"Windows VAD",	#Virtual Address Descriptor
+			"Windows TDX", #Transport Driver Interface (Windows Drivers) CVE-2017-0296
+			"Windows Default Folder",
+			"Windows DLL",	#MS16-058 CVE-2016-0152
+			"Windows DLL Loading",	#MS17-012 CVE-2017-0039
+			"Windows Permissions Enforcement",
+			"Windows Information Disclosure",
+			"Windows Denial",
+			"Windows DNS Query", #MS17-012 CVE-2017-0057
+			"iSNS Server", #MS17-012  CVE-2017-0104
+			"Windows HelpPane", #MS17-012 CVE-2017-0100
+			"Windows IME", #MS16-130 CVE-2016-7221
+			"Task Scheduler", #MS16-130 CVE-2016-7222
+			"Dxgkrnl.sys",	#no MS CVE-2017-0077
+			"Windows System Information Console", # CVE-2017-8557
+			"Windows Explorer", # CVE-2017-8463
+			"Windows PowerShell", # CVE-2017-8565
+			"Windows Performance Monitor" # CVE-2017-0170
+		]
+	},
+	{
+		"name":"Windows Search",
+		"altname":{
+			"fr":"Windows Search"
+		},
+		"startwith":[
+			"Windows Search",
+			"Microsoft Windows Search"
+		]
+	},
+	{
+		"name":"Microsoft Graphics (GDI)",
+		"altname":{
+			"fr":"Microsoft Graphics (GDI)"
+		},
+		"startwith":[
+			"Microsoft Graphics Component",
+			"Windows Graphics",
+			"Graphics Component ",
+			"GDI",
+			"Direct3D",
+			"Windows Imaging Component",
+			"ATMFD.dll", #Adobe Type Manager Font Driver (ATMFD.DLL)
+			"True Type Font Parsing",
+			"Windows GDI",
+			"Microsoft Color Management",
+			"Microsoft Animation Manager",
+			"Windows Animation Manager",
+			"Open Type Font",
+			"Media Foundation",
+			"libjpeg"	# no MS CVE-2013-6629
+		]
+	},
+
+	{
+		"name":"Scripting Engine (JScript and/or VBScript)",
+		"altname":{
+			"fr":"Scripting Engine (JScript and/or VBScript)"
+		},
+		"startwith":[
+			"Scripting Engine", #MS16-052 CVE-2016-0186
+			"Multiple Scripting Engine", #MS15-108 CVE-2015-2482
+			"VBScript" #MS15-108 CVE-2015-2372
+		]
+	},
+
+	{
+		"name":"SharePoint",
+		"altname":{
+			"fr":"SharePoint"
+		},
+		"startwith":[
+			"Microsoft SharePoint",
+			"SharePoint Server XSS Vulnerability" # CVE-2017-8569
+		]
+	},
+	{
+		"name":"Windows PDF Library",
+		"altname":{
+			"fr":"Lecteur de PDF"
+		},
+		"startwith":[
+			"Windows PDF",
+			"Microsoft PDF",
+			"PDF Library"
+		]
+	},
+	{
+		"name":"Skype",
+		"altname":{
+			"fr":"Skype"
+		},
+		"startwith":[
+			"Skype for Business"
+		]
+	},
+	{
+		"name":"Uniscribe",
+		"altname":{
+			"fr":"Uniscribe"
+		},
+		"startwith":[
+			"Windows Uniscribe",
+			"Microsoft Uniscribe",
+			"Uniscribe"
+		]
+	},
+	{
+		"name":"DirectX",
+		"altname":{
+			"fr":"DirectX"
+		},
+		"startwith":[
+			"DirectX"
+		]
+	},
+	{
+		"name":"Defender (Malware Protection Engine)",
+		"altname":{
+			"fr":"Defender (Malware Protection Engine)"
+		},
+		"startwith":[
+			"Microsoft Malware"
+		]
+	},
+	{
+		"name":"Device Guard",
+		"altname":{
+			"fr":"Device Guard"
+		},
+		"startwith":[
+			"Device Guard"
+		]
+	},
+
+
+	{
+		"name":"RPC",
+		"altname":{
+			"fr":"RPC"
+		},
+		"startwith":[
+			"RPC Network Data Representation Engine"
+		]
+	},
+	{
+		"name":"Windows Shell",
+		"altname":{
+			"fr":"Windows Shell"
+		},
+		"startwith":[
+			"Windows Shell"
+		]
+	},
+	{
+		"name":"Windows Journal",
+		"altname":{
+			"fr":"Windows Journal"
+		},
+		"startwith":[
+			"Windows Journal"
+		]
+	},
+	{
+		"name":"Windows Media Center",
+		"altname":{
+			"fr":"Windows Media Center"
+		},
+		"startwith":[
+			"Windows Media Center"
+		]
+	},
+	{
+		"name":"Windows RDP",
+		"altname":{
+			"fr":"Windows RDP"
+		},
+		"startwith":[
+			"Remote Desktop Protocol Drive",
+			"Windows Remote Desktop Protocol", # CVE-2017-8673
+			"Remote Desktop Virtual Host" # CVE-2017-8714
+		]
+	},
+	{
+		"name":"Microsoft Exchange Server",
+		"altname":{
+			"fr":"Microsoft Exchange"
+		},
+		"startwith":[
+			"Oracle Outside",
+			"Microsoft Exchange"
+		]
+	},
+	{
+		"name":"Group Policy",
+		"altname":{
+			"fr":"Group Policy"
+		},
+		"startwith":[
+			"Group Policy" #MS16-072 CVE-2016-3223
+		]
+	},
+	{
+		"name":"Windows SMB",
+		"altname":{
+			"fr":"Windows SMB"
+		},
+		"startwith":[
+			"Windows SMB",
+			"SMBv2/SMBv3"
+		]
+	},
+	{
+		"name":"Active Directory",
+		"altname":{
+			"fr":"Active Directory"
+		},
+		"startwith":[
+			"Active Directory", #MS16-081 CVE-2016-3226
+			"LDAP" #no MS CVE-2017-0166
+		]
+	},
+	{
+		"name":"Windows DNS Server",
+		"altname":{
+			"fr":"Windows DNS Servery"
+		},
+		"startwith":[
+			"Windows DNS Server"
+		]
+	},
+	{
+		"name":"Windows NetLogon",
+		"altname":{
+			"fr":"NetLogon"
+		},
+		"startwith":[
+			"Windows NetLogon"
+		]
+	},
+	{
+		"name":"Windows Diagnostics Hub",
+		"altname":{
+			"fr":"Windows Diagnostics Hub"	# "Diagnostics Hub Standard Collector Service" (collecte en temps reel des evenements "Event Tracing" et traitement)
+		},
+		"startwith":[
+			"Windows Diagnostics Hub"
+		]
+	},
+	{
+		"name":"WPAD (BadTunnel)",
+		"altname":{
+			"fr":"WPAD (BadTunnel)"
+		},
+		"startwith":[
+			"Windows WPAD Proxy Discovery", #MS16-077 CVE-2016-3236
+			"NetBIOS Spoofing",	# MS16-077
+			"WPAD Elevation of Privilege Vulnerability" # MS16-077 CVE-2016-3213
+		]
+	},
+	{
+		"name":"Print Spooler Components",
+		"altname":{
+			"fr":"Spouleur d'Impression"
+		},
+		"startwith":[
+			"Windows Print Spooler"	# MS16-077 MS16-077
+		]
+	},
+	{
+		"name":"Windows Secure Kernel Mode",
+		"altname":{
+			"fr":"Securite Noyau"
+		},
+		"startwith":[
+			"Windows Secure Kernel Mode",
+			"Secure Kernel Mode"
+		]
+	},
+	{
+		"name":"Kerberos",
+		"altname":{
+			"fr":"Kerberos"
+		},
+		"startwith":[
+			"Kerberos",
+			"NetLogon"
+		]
+	},
+	{
+		"name":"ActiveSyncProvider",
+		"altname":{
+			"fr":"ActiveSyncProvider"
+		},
+		"startwith":[
+			"Universal Outlook"	# MS16-103 MS16-077
+		]
+	},
+	{
+		"name":"Windows Lock Screen",
+		"altname":{
+			"fr":"Windows Lock Screen"
+		},
+		"startwith":[
+			"Windows Lock Screen"
+		]
+	},
+	{
+		"name":"Microsoft Silverlight",
+		"altname":{
+			"fr":"Microsoft Silverlight"
+		},
+		"startwith":[
+			"Microsoft Silverlight"
+		]
+	},
+	{
+		"name":"Microsoft Video Control",
+		"altname":{
+			"fr":"Controleur video"
+		},
+		"startwith":[
+			"Microsoft Video Control",
+			"Video Control"
+		]
+	},
+	{
+		"name":"Local Security Authority Subsystem Service",
+		"altname":{
+			"fr":"LSASS",
+			"en":"LSASS"
+		},
+		"startwith":[
+			"Local Security Authority Subsystem Service",
+			"Virtual Secure Mode", #MS16-137 CVE-2016-7220
+			"Windows NTLM" #MS16-137 CVE-2016-7238
+		]
+	},
+	{
+		"name":"DirectShow",
+		"altname":{
+			"fr":"DirectShow"
+		},
+		"startwith":[
+			"Windows DirectShow",
+			"DirectShow"
+		]
+	},
+	{
+		"name":"ADFS",
+		"altname":{
+			"fr":"ADFS"
+		},
+		"startwith":[
+			"Microsoft Active Directory Federation Services",
+			"ADFS" #no MS CVE-2017-0159
+		]
+	},
+	{
+		"name":"DVD Maker",
+		"altname":{	
+			"fr":"DVD Maker"
+		},
+		"startwith":[
+			"Windows DVD Maker"
+		]
+	},
+	{
+		"name":"IIS",
+		"altname":{
+			"fr":"IIS"
+		},
+		"startwith":[
+			"Microsoft IIS",
+			"Windows IIS"
+		]
+	},
+	{
+		"name":"Microsoft Virtual Hard Disk Driver",
+		"altname":{
+			"fr":"Pilote des disques virtuels"
+		},
+		"startwith":[
+			"VHD Driver" #MS16-138 CVE-2016-7223
+		]
+	},
+	{
+		"name":"SQL Server",
+		"altname":{
+			"fr":"SQL Serveur"
+		},
+		"startwith":[
+			"SQL RDBMS Engine", # MS16-136 CVE-2016-7249
+			"MDS API XSS", # MS16-136 CVE-2016-7251
+			"SQL Analysis Services", # MS16-136 CVE-2016-7252
+			"SQL Server Agent", # MS16-136 CVE-2016-7253
+			"Microsoft SQL Server" # CVE-2017-8516
+		]
+	},
+	{
+		"name":"Network Location Awareness",
+		"altname":{
+			"fr":"Network Location Awareness"
+		},
+		"startwith":[
+			"Network Location Awareness" # MS15-005 CVE-2015-0006
+		]
+	},
+	{
+		"name":"Microsoft Internet Messaging API",
+		"altname":{
+			"fr":"Microsoft Internet Messaging API"
+		},
+		"startwith":[
+			"Microsoft Internet Messaging API" # MS16-126 CVE-2016-3298
+		]
+	},
+	{
+		"name":"Windows Common Log File System Driver",
+		"altname":{
+			"fr":"le pilote de gestion des logs / CLFS"
+		},
+		"startwith":[
+			"Windows Common Log File System Driver", # MS16-134
+			"Windows CLFS" # CVE-2017-8590
+		]
+	},
+	{
+		"name":"HoloLens",
+		"altname":{
+			"fr":"HoloLens"
+		},
+		"startwith":[
+			"HoloLens" # CVE-2017-8584
+		]
+	},
+	{
+		"name":"WordPad",
+		"altname":{
+			"fr":"WordPad"
+		},
+		"startwith":[
+			"WordPad" # CVE-2017-8588
+		]
+	},
+	{
+		"name":"Windows Error Reporting",
+		"altname":{
+			"fr":"Windows Error Reporting"
+		},
+		"startwith":[
+			"Windows Error Reporting" # CVE-2017-8633 like MS15-006
+		]
+	},
+	{
+		"name":"Windows RCP (Advanced Local Procedure Call/ALPC)",
+		"altname":{
+			"fr":"Windows RCP (Advanced Local Procedure Call/ALPC)"
+		},
+		"startwith":[
+			"Windows ALPC" # CVE-2017-8562 like  MS13-102
+		]
+	},
+	{
+		"name":"Xamarin (iOS)",
+		"altname":{
+			"fr":"Xamarin (iOS)"
+		},
+		"startwith":[
+			"Xamarin.iOS" # CVE-2017-8665
+		]
+	},
+	{
+		"name":"Windows Subsystem for Linux",
+		"altname":{
+			"fr":"Windows Subsystem for Linux"
+		},
+		"startwith":[
+			"Windows Subsystem for Linux" # CVE-2017-8627
+		]
+	},
+	{
+		"name":"Windows NetBIOS",
+		"altname":{
+			"fr":"Windows NetBIOS"
+		},
+		"startwith":[
+			"Windows NetBIOS", # CVE-2017-0174
+			"NetBIOS Remote" # CVE-2017-0161
+		]
+	},
+	{
+		"name":"Volume Manager",
+		"altname":{
+			"fr":"Volume Manager"
+		},
+		"startwith":[
+			"Volume Manager" # CVE-2017-8668
+		]
+	},
+	{
+		"name":"JET Database Engine",
+		"altname":{
+			"fr":"JET Database Engine"
+		},
+		"startwith":[
+			"Microsoft JET Database Engine" # CVE-2017-0250
+		]
+	},
+	{
+		"name":"Adobe Font Driver",
+		"altname":{
+			"fr":"Adobe Font Driver"
+		},
+		"startwith":[
+			"Express Compressed Fonts" # CVE-2017-8691 like MS16-026
+		]
+	},
+	{
+		"name":"ActiveX",
+		"altname":{
+			"fr":"ActiveX"
+		},
+		"startwith":[
+			"Microsoft ActiveX"	#no MS CVE-2017-0242
+		]
+	},
+	{
+		"name":"Windows DHCP Server",
+		"altname":{
+			"fr":"Windows DHCP Server"
+		},
+		"startwith":[
+			"DHCP ", # like MS04-042
+			"Windows DHCP Server", # CVE-2017-8686 like MS04-042
+			"Vulnerability in DHCP"	# like MS04-042
+		]
+	},
+	{
+		"name":"Chipset Broadcom BCM43xx",
+		"altname":{
+			"fr":"Chipset Broadcom BCM43xx"
+		},
+		"startwith":[
+			"Broadcom BCM43xx" # CVE-2017-9417
+		]
+	},
+	{
+		"name":"Bluetooth Driver",
+		"altname":{
+			"fr":"pilote Bluetooth"
+		},
+		"startwith":[
+			"Microsoft Bluetooth Driver", # CVE-2017-8628
+			"Bluetooth Driver"
+		]
+	}
+]
