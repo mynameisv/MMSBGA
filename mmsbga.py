@@ -40,16 +40,17 @@
 # Proxy config
 g_dProxyConfig = {
 	u'enabled':False,#True,	# use proxy (True) or not (False)
-	u'username':u'bob',			# username for proxy auth
-	u'password':u'password',	# password for proxy auth
-	u'proxy':u'http://1.2.3.4:8080',			# proxy url with port, like http://1.2.3.4:8080
+	u'username':u'kolla',			# username for proxy auth
+	u'password':u'84zd62qx3W$*D',	# password for proxy auth
+	u'proxy':u'http://172.22.21.134:8080',			# proxy url with port, like http://1.2.3.4:8080
 	u'authtype':u'digest',	# proxy auth type as a string: u'basic' or u'digest'
-	u'sslca':u'test.crt'			# if ssl/tls decypher, ca file name containing the ca, as a string, like: u'myownca.crt'
+	u'sslca':u'NetXP-CA.crt'			# if ssl/tls decypher, ca file name containing the ca, as a string, like: u'myownca.crt'
 }
 #
 #
-# Here your Microsoft Security Update REST API Key
-g_ApiKey = u'1234...abcd...1234'
+g_dRequestHeaders = {
+	u'api-key': u'277e01a20d8f4190b45aa5a75d3385b5'		# Here your Microsoft Security Update REST API Key
+}
 #
 ##
 ###
@@ -77,6 +78,9 @@ from obj_MsUpdate import objMsUpdate
 fVersion = 0.1
 sScriptName = u'MMSBGA'
 Author = u'Mynameisv_'
+#
+# Here your Microsoft Security Update REST API Key
+g_ApiKey = u'277e01a20d8f4190b45aa5a75d3385b5'		
 #
 ##
 ###
@@ -180,7 +184,7 @@ def main():
 		print u''
 		#
 		# 
-		print '  > Write month header to ossir.txt'
+		print '  > Write month header to output.txt'
 		sHeader = u"\r\n"
 		sHeader+= u'================================'
 		sHeader+= u"\r\n"
@@ -202,7 +206,7 @@ def main():
 		sHeader+= u"\r\n"
 		sHeader+= u'--------------------------------'
 		sHeader+= u"\r\n"
-		with open('ossir.txt','a+b') as oFile:
+		with open('output.txt','a+b') as oFile:
 			sContent = oFile.write(sHeader.encode('utf-8'))
 		#
 		# Set the Bulletin Reference Counter
@@ -287,9 +291,9 @@ def main():
 		iYear = oUpdate.getBulletinRealYear()
 		#
 		# Bulletin footer
-		print '  > Write month footer to ossir.txt'
+		print '  > Write month footer to output.txt'
 		sFooter = u"\r\n"
-		with open('ossir.txt','a+b') as oFile:
+		with open('output.txt','a+b') as oFile:
 			sContent = oFile.write(sFooter.encode('utf-8'))
 # end main
 #

@@ -1,0 +1,11 @@
+{
+	"proxy":{
+		"enabled":"False",
+		"username":"username",
+		"password":"password123",
+		"proxy":"http://1.2.3.4:8080",
+		"authtype":"digest",
+		"sslca":"fileca.crt"
+	},
+	"api-key":"1234567890abcdef"
+}

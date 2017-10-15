@@ -1450,7 +1450,7 @@ class objMsUpdate:
 	#end getBulletinSortedExceptAdobe
 	#
 	#############################	
-	def showBulletinOssirWay(self, sBulletinName):
+	def showBulletinOssirWay(self, sOutputFile, sBulletinName):
 		"""
 		Show the MS Bulletin like in the OSSIR's "revue d'actualite"
 		"""
@@ -1493,7 +1493,7 @@ class objMsUpdate:
 			for sAffectedProduct in dBulletinAffected:
 				iLen = len(sSupportedProduct)
 				#print "compare [%s] et [%s] " % (sSupportedProduct,sAffectedProduct[0:iLen])
-				if (sSupportedProduct == sAffectedProduct[0:iLen]):
+				if (sSupportedProduct.upper() == sAffectedProduct[0:iLen].strip().upper()):
 					bFound = True
 				else:
 					pass
@@ -1501,6 +1501,7 @@ class objMsUpdate:
 				iCounter = iCounter+1
 			else:
 				pass		
+		print str(iCounter) + '/' + str(len(lAllSupported))
 		if (iCounter == len(lAllSupported)):
 			dBulletinAffected = [u'All supported OS']
 
@@ -1624,8 +1625,8 @@ class objMsUpdate:
 			sOssirOutput+= u'    %s (%s)' % (sAckFrench, dAck[sAck])
 			sOssirOutput+= u"\r\n"
 		
-		print '  > Write bulletin %s to ossir.txt' % (sMsBulletinReference)
-		with open('ossir.txt','a+b') as oFile:
+		print '  > Write bulletin %s to %s' % (sMsBulletinReference, sOutputFile)
+		with open(sOutputFile,'a+b') as oFile:
 			oFile.write(sOssirOutput.encode('utf-8'))
 
 		

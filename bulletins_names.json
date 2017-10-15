@@ -225,7 +225,9 @@
 			"Windows System Information Console", # CVE-2017-8557
 			"Windows Explorer", # CVE-2017-8463
 			"Windows PowerShell", # CVE-2017-8565
-			"Windows Performance Monitor" # CVE-2017-0170
+			"Windows Performance Monitor", # CVE-2017-0170
+			"Microsoft Windows Security Feature Bypass", # CVE-2017-11823
+			"TRIE Remote Code Execution" # CVE-2017-11769
 		]
 	},
 	{
@@ -235,7 +237,8 @@
 		},
 		"startwith":[
 			"Windows Search",
-			"Microsoft Windows Search"
+			"Microsoft Windows Search",
+			"Microsoft Search"
 		]
 	},
 	{
@@ -244,7 +247,9 @@
 			"fr":"Microsoft Graphics (GDI)"
 		},
 		"startwith":[
-			"Microsoft Graphics Component",
+			"Microsoft Graphics ", #Component",
+			"Microsoft Graphics ", #Information Disclosure", # CVE-2017-8693
+			"Microsoft Graphics ", #Remote Code Execution", # CVE-2017-11762
 			"Windows Graphics",
 			"Graphics Component ",
 			"GDI",
@@ -437,6 +442,15 @@
 		},
 		"startwith":[
 			"Windows DNS Server"
+		]
+	},
+	{
+		"name":"Windows DNS Client",
+		"altname":{
+			"fr":"Windows client DNS"
+		},
+		"startwith":[
+			"Windows DNSAPI" #CVE-2017-11779
 		]
 	},
 	{
@@ -763,6 +777,24 @@
 		"startwith":[
 			"Microsoft Bluetooth Driver", # CVE-2017-8628
 			"Bluetooth Driver"
+		]
+	},
+	{
+		"name":"Windows Storage",
+		"altname":{
+			"fr":"pilote de stockage"
+		},
+		"startwith":[
+			"Windows Storage" #CVE-2017-11818
+		]
+	},
+	{
+		"name":"Windows Update",
+		"altname":{
+			"fr":"Windows Update"
+		},
+		"startwith":[
+			"Windows Update" #CVE-2017-11829
 		]
 	}
 ]
