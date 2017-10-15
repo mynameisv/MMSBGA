@@ -59,20 +59,15 @@ I was force to make more than 100 patchs, mainly in obj_MsUpdate.py:buildMsBulle
 Usage
 -----------------
 1/ Create a Microsoft Security Response Center (MSRC) Portal account 
-
 https://portal.msrc.microsoft.com/en-us/developer
-
 2/ Sign-in
-
 3/ Go to developer's tab or here : https://portal.msrc.microsoft.com/en-us/developer
-
 4/ Generate (or Regenerate) and show your API Key
-
 5/ Edit mmsbga.py and set g_ApiKey (near line 52)
-
 6/ If needed, configure the proxy (near line 40)
+6/ Run the script : python mmsbga.py
 
-7/ Run the script : python mmsbga.py
+
 
 
 
