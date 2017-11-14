@@ -797,4 +797,14 @@
 			"Windows Update" #CVE-2017-11829
 		]
 	}
+	,
+	{
+		"name":"WPA/WPA2",
+		"altname":{
+			"fr":"WPA/WPA2"
+		},
+		"startwith":[
+			"Windows Wireless WPA" #CVE-2017-13080
+		]
+	}
 ]
