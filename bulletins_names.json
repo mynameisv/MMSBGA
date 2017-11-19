@@ -74,8 +74,9 @@
 			"Microsoft Publisher",
 			"Microsoft APP-V", #MS16-107 MS16-077
 			"Office",
-			"Microsoft (MAU) Office"	#MS16-148 CVE-2016-7300
-			
+			"Microsoft (MAU) Office",	#MS16-148 CVE-2016-7300
+			"Microsoft Excel", #CVE-2017-11877 like ms15-110, no more like ms14-083
+			"Microsoft Word" #CVE-2017-11854
 		]
 	},
 	{
@@ -262,8 +263,10 @@
 			"Microsoft Animation Manager",
 			"Windows Animation Manager",
 			"Open Type Font",
+			"OpenType Font",
 			"Media Foundation",
-			"libjpeg"	# no MS CVE-2013-6629
+			"libjpeg",	# no MS CVE-2013-6629
+			"Windows EOT Font Engine" #CVE-2017-11832
 		]
 	},
 
@@ -286,7 +289,8 @@
 		},
 		"startwith":[
 			"Microsoft SharePoint",
-			"SharePoint Server XSS Vulnerability" # CVE-2017-8569
+			"SharePoint Server XSS Vulnerability", # CVE-2017-8569
+			"Microsoft Project Server" #CVE-2017-11876 like MS15-036
 		]
 	},
 	{
@@ -796,8 +800,7 @@
 		"startwith":[
 			"Windows Update" #CVE-2017-11829
 		]
-	}
-	,
+	},
 	{
 		"name":"WPA/WPA2",
 		"altname":{
@@ -805,6 +808,24 @@
 		},
 		"startwith":[
 			"Windows Wireless WPA" #CVE-2017-13080
+		]
+	},
+	{
+		"name":"ASP.NET",
+		"altname":{
+			"fr":"ASP.NET"
+		},
+		"startwith":[
+			"ASP.NET Core" #CVE-2017-8700
+		]
+	},
+	{
+		"name":"Windows Media Player",
+		"altname":{
+			"fr":"Windows Media Player"
+		},
+		"startwith":[
+			"Windows Media Player" #CVE-2017-11768 like ms15-057
 		]
 	}
 ]
