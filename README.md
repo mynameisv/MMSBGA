@@ -68,9 +68,7 @@ https://portal.msrc.microsoft.com/en-us/developer
 
 4/ Generate (or Regenerate) and show your API Key
 
-5/ Edit mmsbga.py and set g_ApiKey (near line 52)
-
-6/ If needed, configure the proxy (near line 40)
+5/ Edit configuration file (mmsbga.conf.json) and set "api-key"
 
 7/ Run the script : python mmsbga.py
 
@@ -80,9 +78,10 @@ Todo
 -----------------
 Todo : 
  * Use python 3
+ * add ADV to end of bulletin
  * Propose another output form
  * Add real english and french output
- * Put parameters in a .conf file and add command line switches
+ * Add command line switches
  * Use the release history to update bulletins
  * Create a way to check every hour and update a kind of database to have web pages like the old bulletin, and a main page that present the bulletin updates (aka rebuild old MS web site ^_^)
  * Clean the code
