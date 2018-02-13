@@ -76,7 +76,9 @@
 			"Office",
 			"Microsoft (MAU) Office",	#MS16-148 CVE-2016-7300
 			"Microsoft Excel", #CVE-2017-11877 like ms15-110, no more like ms14-083
-			"Microsoft Word" #CVE-2017-11854
+			"Microsoft Word", #CVE-2017-11854
+			"Spoofing Vulnerability in Microsoft Office", #CVE-2018-0819
+			"Microsoft Access" #CVE-2018-0799
 		]
 	},
 	{
@@ -228,7 +230,8 @@
 			"Windows PowerShell", # CVE-2017-8565
 			"Windows Performance Monitor", # CVE-2017-0170
 			"Microsoft Windows Security Feature Bypass", # CVE-2017-11823
-			"TRIE Remote Code Execution" # CVE-2017-11769
+			"TRIE Remote Code Execution", # CVE-2017-11769
+			"Microsoft Windows Information" # CVE-2017-11927
 		]
 	},
 	{
@@ -426,7 +429,8 @@
 		},
 		"startwith":[
 			"Windows SMB",
-			"SMBv2/SMBv3"
+			"SMBv2/SMBv3",
+			"SMB Server" #CVE-2018-0749
 		]
 	},
 	{
@@ -827,5 +831,23 @@
 		"startwith":[
 			"Windows Media Player" #CVE-2017-11768 like ms15-057
 		]
-	}
+	},
+	{
+		"name":"Windows Routing and Remote Access",
+		"altname":{
+			"fr":"Windows Routing and Remote Access"
+		},
+		"startwith":[
+			"Windows RRAS Service" #CVE-2017-11885
+		]
+	},
+	{
+		"name":"Windows IPSec",
+		"altname":{
+			"fr":"Windows IPSec"
+		},
+		"startwith":[
+			"Windows IPSec" # CVE-2018-0753 like MS15-120
+		]
+	}		
 ]

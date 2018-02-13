@@ -37,21 +37,6 @@
 ## Config
 ################################
 #
-# Proxy config
-g_dProxyConfig = {
-	u'enabled':False,#True,	# use proxy (True) or not (False)
-	u'username':u'kolla',			# username for proxy auth
-	u'password':u'84zd62qx3W$*D',	# password for proxy auth
-	u'proxy':u'http://172.22.21.134:8080',			# proxy url with port, like http://1.2.3.4:8080
-	u'authtype':u'digest',	# proxy auth type as a string: u'basic' or u'digest'
-	u'sslca':u'NetXP-CA.crt'			# if ssl/tls decypher, ca file name containing the ca, as a string, like: u'myownca.crt'
-}
-#
-#
-g_dRequestHeaders = {
-	u'api-key': u'277e01a20d8f4190b45aa5a75d3385b5'		# Here your Microsoft Security Update REST API Key
-}
-#
 ##
 ###
 ###########################################################
@@ -63,7 +48,7 @@ import json
 import os
 import sys
 #import lxml.etree
-from lxml import etree
+#from lxml import etree
 #import xml.etree.ElementTree
 from obj_RequestsWrap import objRequestsWrap
 from obj_MsUpdates import objMsUpdates
@@ -79,8 +64,17 @@ fVersion = 0.1
 sScriptName = u'MMSBGA'
 Author = u'Mynameisv_'
 #
+# Config file
+g_sJsonConfigFile = u'mmsbga.conf.json'
+#
+# Output file
+g_sOutputFile = u'output.txt'
+#
+# Proxy config
+g_dProxyConfig = {}
+#
 # Here your Microsoft Security Update REST API Key
-g_ApiKey = u'277e01a20d8f4190b45aa5a75d3385b5'		
+g_ApiKey = u''		
 #
 ##
 ###
@@ -89,47 +83,68 @@ g_ApiKey = u'277e01a20d8f4190b45aa5a75d3385b5'
 #############################
 #
 #############################
-def getValueFromParent(oParent, namespaces, sName, sTitle=u''):
-	oChild = oParent.find(sName, namespaces=namespaces)
-	if oChild is not None:
-		if (sTitle==u''):
-			# return .text
-			if oChild.text is not None:
-				return oChild.text.strip()
-			else:
-				return u''
-		if u'Title' in oChild.attrib:
-			if (oChild.attrib[u'Title'] == sTitle):
-				return oChild.text.strip()
-			else:
-				return u''
-		else:
-			return u''
+def loadConf():
+	"""
+	Load configuration : proxy and msrc api key
+	"""
+	global g_dProxyConfig, g_ApiKey
+	#
+	# load file content
+	with open(g_sJsonConfigFile,'rb') as oFile:
+		sJsonContent = oFile.read()
+	#
+	dJsonContent = json.loads(sJsonContent)
+	if (type(dJsonContent)!=dict):
+		print u' ! Error, Json configuration file is wrong: not a dictionnary.'
+		sys.exit(1)
 	else:
-		return u''
-#end getValueFromParent
+		sSection = u'proxy'
+		if (sSection in dJsonContent):
+			# use proxy (True) or not (False)
+			sTag = u'enabled'
+			if (sTag in dJsonContent[sSection]):
+				if (dJsonContent[sSection][sTag].upper() == 'TRUE'):
+					g_dProxyConfig[sTag] = True
+				else:
+					g_dProxyConfig[sTag] = False
+			else:
+				g_dProxyConfig[sTag] = False
+			# username for proxy auth
+			sTag = u'username'
+			if (sTag in dJsonContent[sSection]):
+				g_dProxyConfig[sTag] = dJsonContent[sSection][sTag]
+			else:
+				g_dProxyConfig[sTag] = u''
+			# password for proxy auth
+			sTag = u'password'
+			if (sTag in dJsonContent[sSection]):
+				g_dProxyConfig[sTag] = dJsonContent[sSection][sTag]
+			else:
+				g_dProxyConfig[sTag] = u''
+			# proxy url with port, like http://1.2.3.4:8080
+			sTag = u'proxy'
+			if (sTag in dJsonContent[sSection]):
+				g_dProxyConfig[sTag] = dJsonContent[sSection][sTag].strip()
+			else:
+				g_dProxyConfig[sTag] = u''
+			# proxy auth type as a string: u'basic' or u'digest'
+			sTag = u'authtype'
+			if (sTag in dJsonContent[sSection]):
+				g_dProxyConfig[sTag] = dJsonContent[sSection][sTag].strip()
+			else:
+				g_dProxyConfig[sTag] = u'digest'
+			# if ssl/tls decypher, ca file name containing the ca, as a string, like: u'myownca.crt'
+			sTag = u'sslca'
+			if (sTag in dJsonContent[sSection]):
+				g_dProxyConfig[sTag] = dJsonContent[sSection][sTag].strip()
+			else:
+				g_dProxyConfig[sTag] = u''
+		#
+		sSection = u'api-key'
+		if (sSection in dJsonContent):
+			# api key
+			g_ApiKey = dJsonContent[sSection].strip()
 #
-#############################
-def getTitleFromVuln(oVuln, namespaces):
-	return getValueFromParent(oVuln, namespaces, u'vuln:Title')
-#end getTitleFromVuln
-#
-#############################
-def getNoteFromVuln(oVuln, namespaces):
-	oChild = oVuln.find(u'vuln:Notes', namespaces=namespaces)
-	if (oChild==None):
-		return u''
-	else:
-		return getValueFromParent(oChild, namespaces, u'vuln:Note', u'Description')
-#end getNoteFromVuln
-#
-#############################
-def getDescriptionFromThreat(oThreat, namespaces):
-	return getValueFromParent(oThreat, namespaces, u'vuln:Description')
-#end getDescriptionFromThreat
-#
-
-
 #
 ##
 ###
@@ -138,13 +153,23 @@ def getDescriptionFromThreat(oThreat, namespaces):
 #############################
 def main():
 	#
-	global g_ApiKey
+	global g_dProxyConfig, g_ApiKey
+	#
+	print u''
+	print u'%s %.2f / %s' % (sScriptName, fVersion, Author)
+	print u''
+	print u'================================'
+	print u'[>] Loading configuration'
+	loadConf()
+	print u' + Done.'
 	#
 	# Get all MS Updates
 	print u''
 	print u'================================'
 	print u'[>] Get all available MS updates links'
 	#
+	
+	
 	oUpdates = objMsUpdates()
 	#
 	# Set api key
@@ -155,8 +180,6 @@ def main():
 	#
 	print u' + Found %d updates' % (len(lUpdates))
 	del oUpdates
-	#
-	#lUpdates = [{u'CvrfUrl': u'https://api.msrc.microsoft.com/cvrf/2016-Apr?api-Version={2016-08-01}', u'Severity': None, u'DocumentTitle': u'April 2016 Security Updates', u'CurrentReleaseDate': u'2017-05-16T07:00:00Z', u'RealReleaseDate': '2016-04-01T01:00:00Z', u'Alias': u'2016-Apr', u'InitialReleaseDate': u'2017-05-16T07:00:00Z', u'ID': u'2016-Apr'}]
 	#
 	# Bulletin reference counter, start at 0 if we start at April 2016
 	iBulletinReference = 0
@@ -184,7 +207,7 @@ def main():
 		print u''
 		#
 		# 
-		print '  > Write month header to output.txt'
+		print '  > Write month header to %s' % (g_sOutputFile)
 		sHeader = u"\r\n"
 		sHeader+= u'================================'
 		sHeader+= u"\r\n"
@@ -206,7 +229,7 @@ def main():
 		sHeader+= u"\r\n"
 		sHeader+= u'--------------------------------'
 		sHeader+= u"\r\n"
-		with open('output.txt','a+b') as oFile:
+		with open(g_sOutputFile,'a+b') as oFile:
 			sContent = oFile.write(sHeader.encode('utf-8'))
 		#
 		# Set the Bulletin Reference Counter
@@ -248,7 +271,7 @@ def main():
 			print u'   * That is very odd, there is no Internet Explorer bulletin this month !!'
 		else:
 			#
-			oUpdate.showBulletinOssirWay(sBulletinName)
+			oUpdate.showBulletinOssirWay(g_sOutputFile, sBulletinName)
 			#
 			# Remove this bulletin
 			oUpdate.removeMsBulletin(sBulletinName)
@@ -260,7 +283,7 @@ def main():
 			print u'   * That is very odd, there is no Edge bulletin this month !!'
 		else:
 			#
-			oUpdate.showBulletinOssirWay(sBulletinName)
+			oUpdate.showBulletinOssirWay(g_sOutputFile, sBulletinName)
 			#
 			# Remove this bulletin
 			oUpdate.removeMsBulletin(sBulletinName)
@@ -268,7 +291,7 @@ def main():
 		################################
 		# Every bulletin, except Adobe
 		for sBulletinName in oUpdate.getBulletinSortedExceptAdobe():
-			oUpdate.showBulletinOssirWay(sBulletinName)
+			oUpdate.showBulletinOssirWay(g_sOutputFile, sBulletinName)
 		#
 		################################
 		# Adobe Flash
@@ -277,7 +300,7 @@ def main():
 			print u'   * That is very odd, there is no Flash bulletin this month !!'
 		else:
 			#
-			oUpdate.showBulletinOssirWay(sBulletinName)
+			oUpdate.showBulletinOssirWay(g_sOutputFile, sBulletinName)
 			#
 			# Remove this bulletin
 			oUpdate.removeMsBulletin(sBulletinName)
@@ -291,9 +314,9 @@ def main():
 		iYear = oUpdate.getBulletinRealYear()
 		#
 		# Bulletin footer
-		print '  > Write month footer to output.txt'
+		print '  > Write month footer to %s' %(g_sOutputFile)
 		sFooter = u"\r\n"
-		with open('output.txt','a+b') as oFile:
+		with open(g_sOutputFile,'a+b') as oFile:
 			sContent = oFile.write(sFooter.encode('utf-8'))
 # end main
 #

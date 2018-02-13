@@ -87,6 +87,9 @@ Todo :
  * Clean the code
  * Select the month you want without rebuilding the previous month
  * Stop using fixed values/strings/... in the code
+ * Correct sort month name by using camel case
+ * Change the ordre : dl cve, store by bulletin and allow update, then rebluid the old microsoft web site :)
+ * Process ADV / Advisories
 
 
 
