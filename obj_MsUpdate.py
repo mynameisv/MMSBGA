@@ -83,7 +83,7 @@ class objMsUpdate:
 				u'HARD-CODED-MIXEDGEIE': u'**MixEdgeOrIe**',
 				u'HARD-CODED-IE': u'Internet Explorer',
 				u'HARD-CODED-EDGE': u'Edge',
-				u'HARD-CODED-FLASH': u'Adobe Flash',
+				u'HARD-CODED-FLASH': u'Adobe Flash'
 		}
 		#
 		# Hard coded severity
@@ -918,6 +918,8 @@ class objMsUpdate:
 								...
 
 		"""
+		
+			
 		#
 		# Check if the bulletin is out of band
 		# The information can be found in 3 places :
@@ -943,13 +945,13 @@ class objMsUpdate:
 		# Foreach CVE, get infos and bulletin name that can be tghe same for multiple cve
 		for oVuln in self.getVulnerabilities():
 			# Get common informations
-			sCve = self.getCveFromVulnerability(oVuln)
+			sCve = self.getCveFromVulnerability(oVuln).strip()
 			#print u'      CVE  :{%s}' % (sCve)
-			sCveTitle = self.getTitleFromVulnerability(oVuln)
+			sCveTitle = self.getTitleFromVulnerability(oVuln).strip()
 			#print u'      Title:{%s}' % (sCveTitle)
-			sCveAcknowledgments = self.getAcknowledgmentsFromVuln(oVuln)
+			sCveAcknowledgments = self.getAcknowledgmentsFromVuln(oVuln).strip()
 			#print u' Acknowledgments:{%s}' % (sCveAcknowledgments)
-			sBulletinName =  self.getBulletinNameFromTitle(sCveTitle)
+			sBulletinName =  self.getBulletinNameFromTitle(sCveTitle).strip()
 			#print u'BulletinName:{%s}' % (sBulletinName)
 			dAffectedProductsAndThreats = self.getAffectedProductsFromVuln(oVuln)
 			(bIsIeAffected, bIsEdgeAffected) = self.isIeAndEdgeAffected(dAffectedProductsAndThreats)
@@ -969,9 +971,6 @@ class objMsUpdate:
 				print u'      Note:{%s}' % (self.getNoteFromVulnerability(oVuln))
 				sys.exit()
 			"""
-		
-		
-
 			#
 			# Ok, here we have some small - fucking big - problems that require a case by case processing:
 			#  - sometimes Microsoft rank CVE in IE bulletin, and sometimes not
@@ -1035,6 +1034,9 @@ class objMsUpdate:
 				sys.exit()
 			#
 			# Windows Defender signature update
+			#elif ( (sCve[0:3].upper()==u'ADV') and
+			#			( (sBulletinName.find(self.dHCBulletinsName[u'HARD-CODED-FLASH'])==-1) or
+			#			  (sCveTitle.find(self.dHCBulletinsName[u'HARD-CODED-FLASH'])==-1) ) ):
 			elif ( (sCve[0:3].upper()==u'ADV') and (sBulletinName.find(self.dHCBulletinsName[u'HARD-CODED-FLASH'])==-1) ):
 				# Seems to be a Defender signature update, dont' care of that shit !
 				print u'   * Windows Defenser signature update, not a bulletin'
@@ -1045,6 +1047,9 @@ class objMsUpdate:
 				print u'     Ignoring...'
 			#
 			# Flash named ADV
+			#elif ( (sCve[0:3].upper()==u'ADV') and
+			#			( (sBulletinName.find(self.dHCBulletinsName[u'HARD-CODED-FLASH'])!=-1) and
+			#			  (sCveTitle.find(self.dHCBulletinsName[u'HARD-CODED-FLASH'])!=-1) ) ):
 			elif ( (sCve[0:3].upper()==u'ADV') and (sBulletinName.find(self.dHCBulletinsName[u'HARD-CODED-FLASH'])!=-1) ):
 				# It's Flash, keep it
 				#print u'   * Adobe Flash'
@@ -1073,6 +1078,7 @@ class objMsUpdate:
 					self.addCveToMsBulletins(sBulletinName, sCve, sCveTitle, dAffectedProductsAndThreats, sCveAcknowledgments, oVuln)
 					print u'     Ignoring...'
 			else:
+			
 				#
 				# Simple Patch
 				lCvePatchs = [
@@ -1211,23 +1217,26 @@ class objMsUpdate:
 							sLocalBulletinName = self.dHCBulletinsName[u'HARD-CODED-EDGE']
 							self.addCveToMsBulletins(sLocalBulletinName, sCve, sCveTitle, dAffectedProductsAndThreats, sCveAcknowledgments, oVuln)
 						#
-						# Odd case...
+						# Ie and Edge are affected
 						if bIsIeAffected == False and bIsEdgeAffected == False:
-							print u'************************************'
-							print u'bIsIeAffected == False and bIsEdgeAffected == False'
+							"""
+							print u'      Ie and Edge are affected'
 							print u'      CVE  :{%s}' % (sCve)
 							print u'      Title:{%s}' % (sCveTitle)
 							print u'      BulletinName:{%s}' % (sBulletinName)
 							print u'      Note:{%s}' % (self.getNoteFromVulnerability(oVuln))
+							"""
 							for sProductId in dAffectedProductsAndThreats:
 								if (sProductId==u'0'):
 									# It's my dirty of storing iSeverityGrade, sorry again ;-D
 									pass
 								else:
 									print self.getAffectedProductFullNameFromProductId(sProductId)
-						
+							#
+							# Add the CVE also to "Scripting Engine" Bulletin Name (the legacy bulletins were like that)
 							self.addCveToMsBulletins(sBulletinName, sCve, sCveTitle, dAffectedProductsAndThreats, sCveAcknowledgments, oVuln)
-							
+						else:
+							pass
 					#
 					# Patch, Common vuln for IE and EDGE
 					elif ( sBulletinName == self.dHCBulletinsName[u'HARD-CODED-MIXEDGEIE'] ):

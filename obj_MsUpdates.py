@@ -141,7 +141,10 @@ class objMsUpdates:
 		try:
 			dJson = oResp.json()
 		except Exception, e:
-			print ' [!] Error parsing Json response, content:{%s}, exception:{%s}' % (oResp.text[0:32], str(e))
+			if not oResp:
+				print ' [!] Error no response, exception:{%s}' % (str(e))	
+			else:
+				print ' [!] Error parsing Json response, content:{%s}, exception:{%s}' % (oResp.text[0:32], str(e))
 			return u''
 		#
 		# Select the value

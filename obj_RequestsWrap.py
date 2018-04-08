@@ -1,7 +1,8 @@
 #!/usr/bin/python
+# -*- coding: ascii -*-
 #
 #DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
-#                    Version 3, August 2017
+#                    Version 2, December 2004 
 #Everyone is permitted to copy and distribute verbatim or modified 
 #copies of this license document, and changing it is allowed as long 
 #as the name is changed. 
@@ -222,7 +223,7 @@ class objRequestsWrap:
 	#end setParams
 	#
 	#############################
-	def get(self, sUrl):
+	def get(self, sUrl, bExitIfError=False):
 		"""
 		Set header for http request
 		:param dHeaders		dictionnary {'header name':'value'}
@@ -232,11 +233,11 @@ class objRequestsWrap:
 				# There is a proxy...
 				if (self.oProxyAuth != None):
 					# Proxy with auth
-					if (self.sProxySslCa!=u''):
+					if (self.sProxySslCa==u''):
 						# SSL/TLS decypher
 						oResponse = requests.get(sUrl, params=self.dParams, headers=self.dHeaders, proxies=self.dProxyUrl, auth=self.oProxyAuth, verify=self.sProxySslCa)
 					else:
-							oResponse = requests.get(sUrl, params=self.dParams, headers=self.dHeaders, proxies=self.dProxyUrl, auth=self.oProxyAuth)
+						oResponse = requests.get(sUrl, params=self.dParams, headers=self.dHeaders, proxies=self.dProxyUrl, auth=self.oProxyAuth)
 				else:
 					# No proxy auth
 					if (self.sProxySslCa!=u''):
@@ -249,7 +250,10 @@ class objRequestsWrap:
 				oResponse = requests.get(sUrl, params=self.dParams, headers=self.dHeaders)
 		except Exception, e:
 			print ' [!] Error in GET, exception:{%s}' % (str(e))
-			sys.exit(1)
+			if (bExitIfError==True):
+				sys.exit(1)
+			else:
+				return None
 		#
 		# check server status code
 		if (oResponse.status_code==200):
@@ -257,13 +261,15 @@ class objRequestsWrap:
 			return oResponse
 		elif (oResponse.status_code==204):
 			print ' [!] Error, 204 Request rate limit exceeded'
-			sys.exit(1)
 		elif  (oResponse.status_code==403):
 			print ' [!] Error, 403 Forbidden'
-			sys.exit(1)
 		else:
 			print ' [!] Error, Unknown status_code:{%d}' % (oResponse.status_code)
+		# If we are here we have an error
+		if (bExitIfError==True):
 			sys.exit(1)
+		else:
+			return None
 	#end get
 	#
 	#############################
