@@ -25,7 +25,8 @@
 			"fr":"HARD-CODED-EDGE"
 		},
 		"startwith":[
-			"Microsoft Edge"
+			"Microsoft Edge",
+			"Chakra Scripting Engine"
 		]
 	},
 	{
@@ -184,10 +185,11 @@
 	{
 		"name":"Kernel-Mode Drivers",
 		"altname":{
-			"fr":"Noya"
+			"fr":"Pilote noyau"
 		},
 		"startwith":[
-			"Windows Virtual PCI"
+			"Windows Virtual PCI",
+			"CNG Security" # CVE-2018-0902
 		]
 	},
 	{
@@ -849,5 +851,45 @@
 		"startwith":[
 			"Windows IPSec" # CVE-2018-0753 like MS15-120
 		]
-	}		
-]
+	},
+	{
+		"name":"CredSSP Service",
+		"altname":{
+			"fr":"Service CredSSP",
+			"en":"CredSSP Service"
+		},
+		"startwith":[
+			"CredSSP" # CVE-2018-0886
+		]
+	},
+	{
+		"name":"Virtual File System / VFS",
+		"altname":{
+			"fr":"Virtual File System / VFS"
+		},
+		"startwith":[
+			"Windows Desktop Bridge VFS" # CVE-2018-0877
+		]
+	},
+	{
+		"name":"Remote Assistance",
+		"altname":{
+			"fr":"Assistance a distance",
+			"en":"Remote Assistance"
+		},
+		"startwith":[
+			"Windows Remote Assistance" # CVE-2018-0877
+		]
+	},
+	{
+		"name":"Desktop Bridge",
+		"altname":{
+			"fr":"Pont du bureau",
+			"en":"Desktop Bridge"
+		},
+		"startwith":[
+			"Windows Desktop Bridge" # CVE-2018-0880
+		]
+	}
+	
+]	
