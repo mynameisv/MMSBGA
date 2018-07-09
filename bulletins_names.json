@@ -126,7 +126,8 @@
 			"fr":"HTTP.sys"
 		},
 		"startwith":[
-			"HTTP.sys"
+			"HTTP.sys",
+			"HTTP Protocol Stack" # CVE-2018-8231
 		]
 	},
 	{
@@ -179,7 +180,8 @@
 			"Windows Kernel",
 			"Microsoft DirectX Graphics Kernel Subsystem",
 			"Windows File System Security",
-			"Windows Session Object"
+			"Windows Session Object",
+			"Windows Image" # CVE-2018-8170
 		]
 	},
 	{
@@ -189,7 +191,8 @@
 		},
 		"startwith":[
 			"Windows Virtual PCI",
-			"CNG Security" # CVE-2018-0902
+			"CNG Security", # CVE-2018-0902
+			"NTFS" # CVE-2018-1036
 		]
 	},
 	{
@@ -210,6 +213,7 @@
 			"Windows Remote Code",
 			"Windows Security Feature",
 			"Windows COM ",
+			"Microsoft COM ", # CVE-2018-0824
 			"Windows Cursor",
 			"Windows Elevation",
 			"LNK",
@@ -283,7 +287,8 @@
 		"startwith":[
 			"Scripting Engine", #MS16-052 CVE-2016-0186
 			"Multiple Scripting Engine", #MS15-108 CVE-2015-2482
-			"VBScript" #MS15-108 CVE-2015-2372
+			"VBScript", #MS15-108 CVE-2015-2372
+			"Windows VBScript Engine" # CVE-2018-8174
 		]
 	},
 
@@ -890,6 +895,88 @@
 		"startwith":[
 			"Windows Desktop Bridge" # CVE-2018-0880
 		]
+	},
+	{
+		"name":"Azure IoT SDK",
+		"altname":{
+			"fr":"Azure IoT SDK",
+			"en":"Azure IoT SDK"
+		},
+		"startwith":[
+			"Azure IoT SDK" # CVE-2018-8119
+		]
+	},
+	{
+		"name":"Microsoft InfoPath",
+		"altname":{
+			"fr":"Microsoft InfoPath",
+			"en":"Microsoft InfoPath"
+		},
+		"startwith":[
+			"Microsoft InfoPath" # CVE-2018-8173
+		]
+	},
+	{
+		"name":"Host Compute Service",
+		"altname":{
+			"fr":"Host Compute Service",
+			"en":"Host Compute Service"
+		},
+		"startwith":[
+			"Windows Host Compute Service" # CVE-2018-8115
+		]
+	},
+	{
+		"name":"Webdav",
+		"altname":{
+			"fr":"Webdav",
+			"en":"Webdav"
+		},
+		"startwith":[
+			"Webdav" # CVE-2018-8175
+		]
+	},
+	{
+		"name":"Cortana",
+		"altname":{
+			"fr":"Cortana",
+			"en":"Cortana"
+		},
+		"startwith":[
+			"Cortana" # CVE-2018-8140
+		]
+	},
+	{
+		"name":"Windows Wireless",
+		"altname":{
+			"fr":"Pilote WiFi",
+			"en":"Windows Wireless"
+		},
+		"startwith":[
+			"Windows Wireless" # CVE-2018-8140
+		]
+	},
+	{
+		"name":"Code Integrity",
+		"altname":{
+			"fr":"Code Integrity",
+			"en":"Code Integrity"
+		},
+		"startwith":[
+			"Windows Code Integrity", #CVE-2018-1040
+			"Code Integrity" 
+		]
+	},
+	{
+		"name":"Human Interface Device (HID)",
+		"altname":{
+			"fr":"Human Interface Device (HID)",
+			"en":"Human Interface Device (HID)"
+		},
+		"startwith":[
+			"HID" # CVE-2018-8169
+		]
 	}
+	
 	
 ]	
