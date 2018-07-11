@@ -320,7 +320,8 @@
 			"fr":"Skype"
 		},
 		"startwith":[
-			"Skype for Business"
+			"Skype for Business",
+			"Remote Code Execution Vulnerability in Skype" #CVE-2018-8311
 		]
 	},
 	{
@@ -592,7 +593,8 @@
 		},
 		"startwith":[
 			"Microsoft Active Directory Federation Services",
-			"ADFS" #no MS CVE-2017-0159
+			"ADFS", #no MS CVE-2017-0159
+			"Open Source Customization for Active Directory" #CVE-2018-8326
 		]
 	},
 	{
@@ -827,7 +829,8 @@
 			"fr":"ASP.NET"
 		},
 		"startwith":[
-			"ASP.NET Core" #CVE-2017-8700
+			"ASP.NET Core", #CVE-2017-8700
+			"ASP.NET" #CVE-2018-8171
 		]
 	},
 	{
@@ -976,7 +979,67 @@
 		"startwith":[
 			"HID" # CVE-2018-8169
 		]
+	},
+	{
+		"name":"Visual Studio",
+		"altname":{
+			"fr":"Visual Studio",
+			"en":"Visual Studio"
+		},
+		"startwith":[
+			"Visual Studio", # CVE-2018-8172
+			"Microsoft Macro" # CVE-2018-8232
+		]
+	},
+	{
+		"name":"Windows FTP Server",
+		"altname":{
+			"fr":"Windows FTP Server",
+			"en":"Windows FTP Server"
+		},
+		"startwith":[
+			"Windows FTP Server" # CVE-2018-8206
+		]
+	},
+	{
+		"name":"Microsoft Research JavaScript",
+		"altname":{
+			"fr":"Microsoft Research JavaScript",
+			"en":"Microsoft Research JavaScript"
+		},
+		"startwith":[
+			"MSR JavaScript" # CVE-2018-8319
+		]
+	},
+	{
+		"name":"PowerShell Editor Services",
+		"altname":{
+			"fr":"IDE PowerShell Editor",
+			"en":"PowerShell Editor IDE"
+		},
+		"startwith":[
+			"PowerShell Editor Services" # CVE-2018-8327
+		]
+	},
+	{
+		"name":"Windows Mail Client",
+		"altname":{
+			"fr":"Client Mail de l'App Store",
+			"en":"Windows Mail Client from App Store"
+		},
+		"startwith":[
+			"Windows Mail Client" # CVE-2018-8305
+		]
+	},
+	{
+		"name":"Microsoft Wireless Display Adapter",
+		"altname":{
+			"fr":"Microsoft Wireless Display Adapter",
+			"en":"Microsoft Wireless Display Adapter"
+		},
+		"startwith":[
+			"Microsoft Wireless Display Adapter" #CVE-2018-8306
+		]
 	}
-	
 	
 ]	
