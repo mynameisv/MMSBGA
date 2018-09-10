@@ -484,7 +484,8 @@
 			"fr":"Windows Diagnostics Hub"	# "Diagnostics Hub Standard Collector Service" (collecte en temps reel des evenements "Event Tracing" et traitement)
 		},
 		"startwith":[
-			"Windows Diagnostics Hub"
+			"Windows Diagnostics Hub",
+			"Diagnostic Hub" #CVE-2018-0952
 		]
 	},
 	{
@@ -594,7 +595,8 @@
 		"startwith":[
 			"Microsoft Active Directory Federation Services",
 			"ADFS", #no MS CVE-2017-0159
-			"Open Source Customization for Active Directory" #CVE-2018-8326
+			"Open Source Customization for Active Directory", #CVE-2018-8326
+			"AD FS" # CVE-2018-8340
 		]
 	},
 	{
@@ -946,7 +948,8 @@
 			"en":"Cortana"
 		},
 		"startwith":[
-			"Cortana" # CVE-2018-8140
+			"Cortana", # CVE-2018-8140
+			"Microsoft Cortana" #CVE-2018-8253
 		]
 	},
 	{
@@ -1039,6 +1042,26 @@
 		},
 		"startwith":[
 			"Microsoft Wireless Display Adapter" #CVE-2018-8306
+		]
+	},
+	{
+		"name":"Windows Firewall",
+		"altname":{
+			"fr":"Firewall Windows",
+			"en":"Windows Firewall"
+		},
+		"startwith":[
+			"Windows Firewall" #CVE-2018-8206
+		]
+	},
+	{
+		"name":"Network Driver Interface Specification (NDIS)",
+		"altname":{
+			"fr":"Pilote reseau (NDIS)",
+			"en":"Network Driver Interface Specification (NDIS)"
+		},
+		"startwith":[
+			"Windows NDIS" #CVE-2018-8342 like MS15-117
 		]
 	}
 	
