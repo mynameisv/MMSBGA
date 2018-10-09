@@ -79,7 +79,9 @@
 			"Microsoft Excel", #CVE-2017-11877 like ms15-110, no more like ms14-083
 			"Microsoft Word", #CVE-2017-11854
 			"Spoofing Vulnerability in Microsoft Office", #CVE-2018-0819
-			"Microsoft Access" #CVE-2018-0799
+			"Microsoft Access", #CVE-2018-0799
+			"Word PDF",
+			"Lync for Mac" #CVE-2018-8474
 		]
 	},
 	{
@@ -106,7 +108,8 @@
 		"startwith":[
 			"MSXML",
 			"Microsoft XML",
-			"Windows XML"
+			"Windows XML",
+			"MS XML"
 		]
 	},
 	{
@@ -118,7 +121,8 @@
 			".NET Framework",
 			"TLS/SSL Spoofing",
 			".NET",
-			"OData" #CVE-2018-8269
+			"OData", #CVE-2018-8269
+			"System.IO.Pipelines" #CVE-2018-8409
 		]
 	},
 	{
