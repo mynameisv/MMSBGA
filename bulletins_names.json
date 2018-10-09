@@ -117,7 +117,8 @@
 		"startwith":[
 			".NET Framework",
 			"TLS/SSL Spoofing",
-			".NET"
+			".NET",
+			"OData" #CVE-2018-8269
 		]
 	},
 	{
@@ -288,7 +289,8 @@
 			"Scripting Engine", #MS16-052 CVE-2016-0186
 			"Multiple Scripting Engine", #MS15-108 CVE-2015-2482
 			"VBScript", #MS15-108 CVE-2015-2372
-			"Windows VBScript Engine" # CVE-2018-8174
+			"Windows VBScript Engine", # CVE-2018-8174
+			"Microsoft Scripting Engine" #CVE-2018-8315
 		]
 	},
 
@@ -1064,5 +1066,4 @@
 			"Windows NDIS" #CVE-2018-8342 like MS15-117
 		]
 	}
-	
 ]	

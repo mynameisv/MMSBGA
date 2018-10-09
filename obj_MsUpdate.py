@@ -1008,7 +1008,7 @@ class objMsUpdate:
 			# Unkown title
 			elif ( (sCve[0:3].upper()!=u'ADV') and (sBulletinName==u'') ):
 				# Unkown title... must be added manually to the Json file
-				print u'   ! Can not find a Bulletin Name. Name must add Title manually in local JSON file.'
+				print u'   ! Can not find a Bulletin Name from the Json local dictionary. Add manually the Title bellow in the local JSON file.'
 				print u'      CVE  :{%s}' % (sCve)
 				print u'      Title:{%s}' % (sCveTitle)
 				print u'      BulletinName:{%s}' % (sBulletinName)
