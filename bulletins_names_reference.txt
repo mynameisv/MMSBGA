@@ -6,7 +6,7 @@
 		},
 		"startwith":[
 			"Microsoft Browser",
-			"Affected Components"
+			"Affected Components"		# strange and may introduced problems... Frack you microsoft for naming "CVE-2016-7278" like that
 		]
 	},
 	{
@@ -16,7 +16,7 @@
 		},
 		"startwith":[
 			"HARD-CODED-IE",
-			"DLL Loading"
+			"DLL Loading"	# strange name !!?
 		]
 	},
 	{
@@ -48,7 +48,7 @@
 			"fr":"SAM et le protocole distant LSAD"
 		},
 		"startwith":[
-			"Windows SAM and LSAD"
+			"Windows SAM and LSAD"	#MS16-047 CVE-2016-0128
 		]
 	},
 	{
@@ -57,7 +57,7 @@
 			"fr":"Service d'ouverture de session secondaire"
 		},
 		"startwith":[
-			"Secondary Logon"
+			"Secondary Logon"	# MS16-046 CVE-2016-0135
 		]
 	},
 	{
@@ -68,20 +68,20 @@
 		"startwith":[
 			"Microsoft Office",
 			"Microsoft PowerPoint",
-			"PowerPoint ",
+			"PowerPoint ", # CVE-2017-8742
 			"Microsoft Outlook",
 			"Microsoft OneNote",
 			"Microsoft Lync",
 			"Microsoft Publisher",
-			"Microsoft APP-V",
+			"Microsoft APP-V", #MS16-107 MS16-077
 			"Office",
-			"Microsoft (MAU) Office",
-			"Microsoft Excel",
-			"Microsoft Word",
-			"Spoofing Vulnerability in Microsoft Office",
-			"Microsoft Access",
+			"Microsoft (MAU) Office",	#MS16-148 CVE-2016-7300
+			"Microsoft Excel", #CVE-2017-11877 like ms15-110, no more like ms14-083
+			"Microsoft Word", #CVE-2017-11854
+			"Spoofing Vulnerability in Microsoft Office", #CVE-2018-0819
+			"Microsoft Access", #CVE-2018-0799
 			"Word PDF",
-			"Lync for Mac"
+			"Lync for Mac" #CVE-2018-8474
 		]
 	},
 	{
@@ -97,7 +97,7 @@
 			"Windows Installer",
 			"Microsoft Registry",
 			"Windows Registry",
-			"Windows Bowser.sys"
+			"Windows Bowser.sys"	#MS16-135 CVE-2016-7218
 		]
 	},
 	{
@@ -121,8 +121,8 @@
 			".NET Framework",
 			"TLS/SSL Spoofing",
 			".NET",
-			"OData",
-			"System.IO.Pipelines"
+			"OData", #CVE-2018-8269
+			"System.IO.Pipelines" #CVE-2018-8409
 		]
 	},
 	{
@@ -132,7 +132,7 @@
 		},
 		"startwith":[
 			"HTTP.sys",
-			"HTTP Protocol Stack"
+			"HTTP Protocol Stack" # CVE-2018-8231
 		]
 	},
 	{
@@ -173,7 +173,7 @@
 			"December Flash",
 			"Security Update for Adobe Flash Player",
 			"Adobe Flash OOB",
-			"August 2017 Flash Update"
+			"August 2017 Flash Update" # ADV170010
 		]
 	},
 	{
@@ -186,7 +186,7 @@
 			"Microsoft DirectX Graphics Kernel Subsystem",
 			"Windows File System Security",
 			"Windows Session Object",
-			"Windows Image"
+			"Windows Image" # CVE-2018-8170
 		]
 	},
 	{
@@ -196,8 +196,8 @@
 		},
 		"startwith":[
 			"Windows Virtual PCI",
-			"CNG Security",
-			"NTFS"
+			"CNG Security", # CVE-2018-0902
+			"NTFS" # CVE-2018-1036
 		]
 	},
 	{
@@ -218,31 +218,31 @@
 			"Windows Remote Code",
 			"Windows Security Feature",
 			"Windows COM ",
-			"Microsoft COM ",
+			"Microsoft COM ", # CVE-2018-0824
 			"Windows Cursor",
 			"Windows Elevation",
 			"LNK",
-			"Windows VAD",
-			"Windows TDX",
+			"Windows VAD",	#Virtual Address Descriptor
+			"Windows TDX", #Transport Driver Interface (Windows Drivers) CVE-2017-0296
 			"Windows Default Folder",
-			"Windows DLL",
-			"Windows DLL Loading",
+			"Windows DLL",	#MS16-058 CVE-2016-0152
+			"Windows DLL Loading",	#MS17-012 CVE-2017-0039
 			"Windows Permissions Enforcement",
 			"Windows Information Disclosure",
 			"Windows Denial",
-			"Windows DNS Query",
-			"iSNS Server",
-			"Windows HelpPane",
-			"Windows IME",
-			"Task Scheduler",
-			"Dxgkrnl.sys",
-			"Windows System Information Console",
-			"Windows Explorer",
-			"Windows PowerShell",
-			"Windows Performance Monitor",
-			"Microsoft Windows Security Feature Bypass",
-			"TRIE Remote Code Execution",
-			"Microsoft Windows Information"
+			"Windows DNS Query", #MS17-012 CVE-2017-0057
+			"iSNS Server", #MS17-012  CVE-2017-0104
+			"Windows HelpPane", #MS17-012 CVE-2017-0100
+			"Windows IME", #MS16-130 CVE-2016-7221
+			"Task Scheduler", #MS16-130 CVE-2016-7222
+			"Dxgkrnl.sys",	#no MS CVE-2017-0077
+			"Windows System Information Console", # CVE-2017-8557
+			"Windows Explorer", # CVE-2017-8463
+			"Windows PowerShell", # CVE-2017-8565
+			"Windows Performance Monitor", # CVE-2017-0170
+			"Microsoft Windows Security Feature Bypass", # CVE-2017-11823
+			"TRIE Remote Code Execution", # CVE-2017-11769
+			"Microsoft Windows Information" # CVE-2017-11927
 		]
 	},
 	{
@@ -262,15 +262,15 @@
 			"fr":"Microsoft Graphics (GDI)"
 		},
 		"startwith":[
-			"Microsoft Graphics ",
-			"Microsoft Graphics ", 
-			"Microsoft Graphics ",
+			"Microsoft Graphics ", #Component",
+			"Microsoft Graphics ", #Information Disclosure", # CVE-2017-8693
+			"Microsoft Graphics ", #Remote Code Execution", # CVE-2017-11762
 			"Windows Graphics",
 			"Graphics Component ",
 			"GDI",
 			"Direct3D",
 			"Windows Imaging Component",
-			"ATMFD.dll",
+			"ATMFD.dll", #Adobe Type Manager Font Driver (ATMFD.DLL)
 			"True Type Font Parsing",
 			"Windows GDI",
 			"Microsoft Color Management",
@@ -279,8 +279,8 @@
 			"Open Type Font",
 			"OpenType Font",
 			"Media Foundation",
-			"libjpeg",
-			"Windows EOT Font Engine"
+			"libjpeg",	# no MS CVE-2013-6629
+			"Windows EOT Font Engine" #CVE-2017-11832
 		]
 	},
 
@@ -290,11 +290,11 @@
 			"fr":"Scripting Engine (JScript and/or VBScript)"
 		},
 		"startwith":[
-			"Scripting Engine",
-			"Multiple Scripting Engine",
-			"VBScript",
-			"Windows VBScript Engine",
-			"Microsoft Scripting Engine"
+			"Scripting Engine", #MS16-052 CVE-2016-0186
+			"Multiple Scripting Engine", #MS15-108 CVE-2015-2482
+			"VBScript", #MS15-108 CVE-2015-2372
+			"Windows VBScript Engine", # CVE-2018-8174
+			"Microsoft Scripting Engine" #CVE-2018-8315
 		]
 	},
 
@@ -305,8 +305,8 @@
 		},
 		"startwith":[
 			"Microsoft SharePoint",
-			"SharePoint Server XSS Vulnerability",
-			"Microsoft Project Server"
+			"SharePoint Server XSS Vulnerability", # CVE-2017-8569
+			"Microsoft Project Server" #CVE-2017-11876 like MS15-036
 		]
 	},
 	{
@@ -327,7 +327,7 @@
 		},
 		"startwith":[
 			"Skype for Business",
-			"Remote Code Execution Vulnerability in Skype"
+			"Remote Code Execution Vulnerability in Skype" #CVE-2018-8311
 		]
 	},
 	{
@@ -413,8 +413,8 @@
 		},
 		"startwith":[
 			"Remote Desktop Protocol Drive",
-			"Windows Remote Desktop Protocol",
-			"Remote Desktop Virtual Host"
+			"Windows Remote Desktop Protocol", # CVE-2017-8673
+			"Remote Desktop Virtual Host" # CVE-2017-8714
 		]
 	},
 	{
@@ -433,7 +433,7 @@
 			"fr":"Group Policy"
 		},
 		"startwith":[
-			"Group Policy"
+			"Group Policy" #MS16-072 CVE-2016-3223
 		]
 	},
 	{
@@ -444,7 +444,7 @@
 		"startwith":[
 			"Windows SMB",
 			"SMBv2/SMBv3",
-			"SMB Server"
+			"SMB Server" #CVE-2018-0749
 		]
 	},
 	{
@@ -453,8 +453,8 @@
 			"fr":"Active Directory"
 		},
 		"startwith":[
-			"Active Directory",
-			"LDAP"
+			"Active Directory", #MS16-081 CVE-2016-3226
+			"LDAP" #no MS CVE-2017-0166
 		]
 	},
 	{
@@ -472,7 +472,7 @@
 			"fr":"Windows client DNS"
 		},
 		"startwith":[
-			"Windows DNSAPI"
+			"Windows DNSAPI" #CVE-2017-11779
 		]
 	},
 	{
@@ -487,11 +487,11 @@
 	{
 		"name":"Windows Diagnostics Hub",
 		"altname":{
-			"fr":"Windows Diagnostics Hub"
+			"fr":"Windows Diagnostics Hub"	# "Diagnostics Hub Standard Collector Service" (collecte en temps reel des evenements "Event Tracing" et traitement)
 		},
 		"startwith":[
 			"Windows Diagnostics Hub",
-			"Diagnostic Hub"
+			"Diagnostic Hub" #CVE-2018-0952
 		]
 	},
 	{
@@ -500,9 +500,9 @@
 			"fr":"WPAD (BadTunnel)"
 		},
 		"startwith":[
-			"Windows WPAD Proxy Discovery",
-			"NetBIOS Spoofing",
-			"WPAD Elevation of Privilege Vulnerability"
+			"Windows WPAD Proxy Discovery", #MS16-077 CVE-2016-3236
+			"NetBIOS Spoofing",	# MS16-077
+			"WPAD Elevation of Privilege Vulnerability" # MS16-077 CVE-2016-3213
 		]
 	},
 	{
@@ -511,7 +511,7 @@
 			"fr":"Spouleur d'Impression"
 		},
 		"startwith":[
-			"Windows Print Spooler"
+			"Windows Print Spooler"	# MS16-077 MS16-077
 		]
 	},
 	{
@@ -540,7 +540,7 @@
 			"fr":"ActiveSyncProvider"
 		},
 		"startwith":[
-			"Universal Outlook"
+			"Universal Outlook"	# MS16-103 MS16-077
 		]
 	},
 	{
@@ -579,8 +579,8 @@
 		},
 		"startwith":[
 			"Local Security Authority Subsystem Service",
-			"Virtual Secure Mode",
-			"Windows NTLM"
+			"Virtual Secure Mode", #MS16-137 CVE-2016-7220
+			"Windows NTLM" #MS16-137 CVE-2016-7238
 		]
 	},
 	{
@@ -600,9 +600,9 @@
 		},
 		"startwith":[
 			"Microsoft Active Directory Federation Services",
-			"ADFS",
-			"Open Source Customization for Active Directory",
-			"AD FS"
+			"ADFS", #no MS CVE-2017-0159
+			"Open Source Customization for Active Directory", #CVE-2018-8326
+			"AD FS" # CVE-2018-8340
 		]
 	},
 	{
@@ -630,7 +630,7 @@
 			"fr":"Pilote des disques virtuels"
 		},
 		"startwith":[
-			"VHD Driver"
+			"VHD Driver" #MS16-138 CVE-2016-7223
 		]
 	},
 	{
@@ -639,11 +639,11 @@
 			"fr":"SQL Serveur"
 		},
 		"startwith":[
-			"SQL RDBMS Engine",
-			"MDS API XSS",
-			"SQL Analysis Services",
-			"SQL Server Agent",
-			"Microsoft SQL Server"
+			"SQL RDBMS Engine", # MS16-136 CVE-2016-7249
+			"MDS API XSS", # MS16-136 CVE-2016-7251
+			"SQL Analysis Services", # MS16-136 CVE-2016-7252
+			"SQL Server Agent", # MS16-136 CVE-2016-7253
+			"Microsoft SQL Server" # CVE-2017-8516
 		]
 	},
 	{
@@ -652,7 +652,7 @@
 			"fr":"Network Location Awareness"
 		},
 		"startwith":[
-			"Network Location Awareness"
+			"Network Location Awareness" # MS15-005 CVE-2015-0006
 		]
 	},
 	{
@@ -661,7 +661,7 @@
 			"fr":"Microsoft Internet Messaging API"
 		},
 		"startwith":[
-			"Microsoft Internet Messaging API"
+			"Microsoft Internet Messaging API" # MS16-126 CVE-2016-3298
 		]
 	},
 	{
@@ -670,8 +670,8 @@
 			"fr":"le pilote de gestion des logs / CLFS"
 		},
 		"startwith":[
-			"Windows Common Log File System Driver",
-			"Windows CLFS"
+			"Windows Common Log File System Driver", # MS16-134
+			"Windows CLFS" # CVE-2017-8590
 		]
 	},
 	{
@@ -680,7 +680,7 @@
 			"fr":"HoloLens"
 		},
 		"startwith":[
-			"HoloLens"
+			"HoloLens" # CVE-2017-8584
 		]
 	},
 	{
@@ -689,7 +689,7 @@
 			"fr":"WordPad"
 		},
 		"startwith":[
-			"WordPad"
+			"WordPad" # CVE-2017-8588
 		]
 	},
 	{
@@ -698,7 +698,7 @@
 			"fr":"Windows Error Reporting"
 		},
 		"startwith":[
-			"Windows Error Reporting"
+			"Windows Error Reporting" # CVE-2017-8633 like MS15-006
 		]
 	},
 	{
@@ -707,7 +707,7 @@
 			"fr":"Windows RCP (Advanced Local Procedure Call/ALPC)"
 		},
 		"startwith":[
-			"Windows ALPC"
+			"Windows ALPC" # CVE-2017-8562 like  MS13-102
 		]
 	},
 	{
@@ -716,7 +716,7 @@
 			"fr":"Xamarin (iOS)"
 		},
 		"startwith":[
-			"Xamarin.iOS"
+			"Xamarin.iOS" # CVE-2017-8665
 		]
 	},
 	{
@@ -725,7 +725,7 @@
 			"fr":"Windows Subsystem for Linux"
 		},
 		"startwith":[
-			"Windows Subsystem for Linux"
+			"Windows Subsystem for Linux" # CVE-2017-8627
 		]
 	},
 	{
@@ -734,8 +734,8 @@
 			"fr":"Windows NetBIOS"
 		},
 		"startwith":[
-			"Windows NetBIOS",
-			"NetBIOS Remote"
+			"Windows NetBIOS", # CVE-2017-0174
+			"NetBIOS Remote" # CVE-2017-0161
 		]
 	},
 	{
@@ -744,7 +744,7 @@
 			"fr":"Volume Manager"
 		},
 		"startwith":[
-			"Volume Manager"
+			"Volume Manager" # CVE-2017-8668
 		]
 	},
 	{
@@ -753,7 +753,7 @@
 			"fr":"JET Database Engine"
 		},
 		"startwith":[
-			"Microsoft JET Database Engine"
+			"Microsoft JET Database Engine" # CVE-2017-0250
 		]
 	},
 	{
@@ -762,7 +762,7 @@
 			"fr":"Adobe Font Driver"
 		},
 		"startwith":[
-			"Express Compressed Fonts"
+			"Express Compressed Fonts" # CVE-2017-8691 like MS16-026
 		]
 	},
 	{
@@ -771,7 +771,7 @@
 			"fr":"ActiveX"
 		},
 		"startwith":[
-			"Microsoft ActiveX"
+			"Microsoft ActiveX"	#no MS CVE-2017-0242
 		]
 	},
 	{
@@ -780,9 +780,9 @@
 			"fr":"Windows DHCP Server"
 		},
 		"startwith":[
-			"DHCP ",
-			"Windows DHCP Server",
-			"Vulnerability in DHCP"
+			"DHCP ", # like MS04-042
+			"Windows DHCP Server", # CVE-2017-8686 like MS04-042
+			"Vulnerability in DHCP"	# like MS04-042
 		]
 	},
 	{
@@ -791,7 +791,7 @@
 			"fr":"Chipset Broadcom BCM43xx"
 		},
 		"startwith":[
-			"Broadcom BCM43xx"
+			"Broadcom BCM43xx" # CVE-2017-9417
 		]
 	},
 	{
@@ -800,7 +800,7 @@
 			"fr":"pilote Bluetooth"
 		},
 		"startwith":[
-			"Microsoft Bluetooth Driver",
+			"Microsoft Bluetooth Driver", # CVE-2017-8628
 			"Bluetooth Driver"
 		]
 	},
@@ -810,7 +810,7 @@
 			"fr":"pilote de stockage"
 		},
 		"startwith":[
-			"Windows Storage"
+			"Windows Storage" #CVE-2017-11818
 		]
 	},
 	{
@@ -819,7 +819,7 @@
 			"fr":"Windows Update"
 		},
 		"startwith":[
-			"Windows Update"
+			"Windows Update" #CVE-2017-11829
 		]
 	},
 	{
@@ -828,7 +828,7 @@
 			"fr":"WPA/WPA2"
 		},
 		"startwith":[
-			"Windows Wireless WPA"
+			"Windows Wireless WPA" #CVE-2017-13080
 		]
 	},
 	{
@@ -837,8 +837,8 @@
 			"fr":"ASP.NET"
 		},
 		"startwith":[
-			"ASP.NET Core",
-			"ASP.NET"
+			"ASP.NET Core", #CVE-2017-8700
+			"ASP.NET" #CVE-2018-8171
 		]
 	},
 	{
@@ -847,7 +847,7 @@
 			"fr":"Windows Media Player"
 		},
 		"startwith":[
-			"Windows Media Player"
+			"Windows Media Player" #CVE-2017-11768 like ms15-057
 		]
 	},
 	{
@@ -856,7 +856,7 @@
 			"fr":"Windows Routing and Remote Access"
 		},
 		"startwith":[
-			"Windows RRAS Service"
+			"Windows RRAS Service" #CVE-2017-11885
 		]
 	},
 	{
@@ -865,7 +865,7 @@
 			"fr":"Windows IPSec"
 		},
 		"startwith":[
-			"Windows IPSec"
+			"Windows IPSec" # CVE-2018-0753 like MS15-120
 		]
 	},
 	{
@@ -875,7 +875,7 @@
 			"en":"CredSSP Service"
 		},
 		"startwith":[
-			"CredSSP"
+			"CredSSP" # CVE-2018-0886
 		]
 	},
 	{
@@ -884,7 +884,7 @@
 			"fr":"Virtual File System / VFS"
 		},
 		"startwith":[
-			"Windows Desktop Bridge VFS"
+			"Windows Desktop Bridge VFS" # CVE-2018-0877
 		]
 	},
 	{
@@ -894,7 +894,7 @@
 			"en":"Remote Assistance"
 		},
 		"startwith":[
-			"Windows Remote Assistance"
+			"Windows Remote Assistance" # CVE-2018-0877
 		]
 	},
 	{
@@ -904,7 +904,7 @@
 			"en":"Desktop Bridge"
 		},
 		"startwith":[
-			"Windows Desktop Bridge"
+			"Windows Desktop Bridge" # CVE-2018-0880
 		]
 	},
 	{
@@ -914,7 +914,7 @@
 			"en":"Azure IoT SDK"
 		},
 		"startwith":[
-			"Azure IoT SDK"
+			"Azure IoT SDK" # CVE-2018-8119
 		]
 	},
 	{
@@ -924,7 +924,7 @@
 			"en":"Microsoft InfoPath"
 		},
 		"startwith":[
-			"Microsoft InfoPath"
+			"Microsoft InfoPath" # CVE-2018-8173
 		]
 	},
 	{
@@ -934,7 +934,7 @@
 			"en":"Host Compute Service"
 		},
 		"startwith":[
-			"Windows Host Compute Service"
+			"Windows Host Compute Service" # CVE-2018-8115
 		]
 	},
 	{
@@ -944,7 +944,7 @@
 			"en":"Webdav"
 		},
 		"startwith":[
-			"Webdav"
+			"Webdav" # CVE-2018-8175
 		]
 	},
 	{
@@ -954,8 +954,8 @@
 			"en":"Cortana"
 		},
 		"startwith":[
-			"Cortana",
-			"Microsoft Cortana"
+			"Cortana", # CVE-2018-8140
+			"Microsoft Cortana" #CVE-2018-8253
 		]
 	},
 	{
@@ -965,7 +965,7 @@
 			"en":"Windows Wireless"
 		},
 		"startwith":[
-			"Windows Wireless"
+			"Windows Wireless" # CVE-2018-8140
 		]
 	},
 	{
@@ -975,7 +975,7 @@
 			"en":"Code Integrity"
 		},
 		"startwith":[
-			"Windows Code Integrity",
+			"Windows Code Integrity", #CVE-2018-1040
 			"Code Integrity" 
 		]
 	},
@@ -986,7 +986,7 @@
 			"en":"Human Interface Device (HID)"
 		},
 		"startwith":[
-			"HID"
+			"HID" # CVE-2018-8169
 		]
 	},
 	{
@@ -996,8 +996,8 @@
 			"en":"Visual Studio"
 		},
 		"startwith":[
-			"Visual Studio",
-			"Microsoft Macro"
+			"Visual Studio", # CVE-2018-8172
+			"Microsoft Macro" # CVE-2018-8232
 		]
 	},
 	{
@@ -1007,7 +1007,7 @@
 			"en":"Windows FTP Server"
 		},
 		"startwith":[
-			"Windows FTP Server"
+			"Windows FTP Server" # CVE-2018-8206
 		]
 	},
 	{
@@ -1017,7 +1017,7 @@
 			"en":"Microsoft Research JavaScript"
 		},
 		"startwith":[
-			"MSR JavaScript"
+			"MSR JavaScript" # CVE-2018-8319
 		]
 	},
 	{
@@ -1027,7 +1027,7 @@
 			"en":"PowerShell Editor IDE"
 		},
 		"startwith":[
-			"PowerShell Editor Services"
+			"PowerShell Editor Services" # CVE-2018-8327
 		]
 	},
 	{
@@ -1037,7 +1037,7 @@
 			"en":"Windows Mail Client from App Store"
 		},
 		"startwith":[
-			"Windows Mail Client"
+			"Windows Mail Client" # CVE-2018-8305
 		]
 	},
 	{
@@ -1047,7 +1047,7 @@
 			"en":"Microsoft Wireless Display Adapter"
 		},
 		"startwith":[
-			"Microsoft Wireless Display Adapter"
+			"Microsoft Wireless Display Adapter" #CVE-2018-8306
 		]
 	},
 	{
@@ -1057,7 +1057,7 @@
 			"en":"Windows Firewall"
 		},
 		"startwith":[
-			"Windows Firewall"
+			"Windows Firewall" #CVE-2018-8206
 		]
 	},
 	{
@@ -1067,7 +1067,7 @@
 			"en":"Network Driver Interface Specification (NDIS)"
 		},
 		"startwith":[
-			"Windows NDIS"
+			"Windows NDIS" #CVE-2018-8342 like MS15-117
 		]
 	}
 ]	
